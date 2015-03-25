@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/rossja/mainscreen/issues"
   },
-  "homepage": "https://github.com/rossja/mainscreen"
+  "homepage": "https://github.com/rossja/mainscreen",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "supertest": "^0.15.0"
+  }
 }
