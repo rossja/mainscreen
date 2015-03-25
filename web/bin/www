@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var app = require('../app');
+
+app.listen(9001, function() {
+  console.log('listening on port 9001');
+});
