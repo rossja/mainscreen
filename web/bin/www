@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/opt/node/bin/node
 var app = require('../app');
 
 app.listen(9001, function() {
