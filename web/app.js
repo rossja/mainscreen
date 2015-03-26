@@ -1,33 +1,34 @@
 var express = require('express');
 var app = express();
-var secrets = require('./secrets');
+var secrets = require('./secrets.js');
 
-var trackwords = 'BSidesROC BSIDESROC bsidesroc bsidesROC'
+var trackwords = 'BSidesROC, bsidesroc, BSIDESROC, bsidesROC'
 
 app.get('/', function(request, response) {
   response.send('OK');
 });
 
-get_stream(trackwords)
+get_stream(trackwords);
 
 function get_stream(trackwords) {
-  var Stream = require('user-stream');
-  var stream = new Stream({
+  var Twitter = require('twitter');
+  var client = new Twitter ({
     consumer_key: secrets.consumer_key,
     consumer_secret: secrets.consumer_secret,
     access_token_key: secrets.access_token_key,
     access_token_secret: secrets.access_token_secret
   });
-  var params = {
-    follow: trackwords
-  }
 
   //create stream
-  stream.stream(params);
+  client.stream('statuses/filter', {track: trackwords}, function(stream) {
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+    });
 
-  //listen stream data
-  stream.on('data', function(json) {
-   console.log(json);
+    stream.on('error', function(error) {
+      console.log(error);
+    });
   });
 }
+
 module.exports = app;
