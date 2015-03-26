@@ -19,7 +19,7 @@ function get_stream(trackwords) {
     access_token_secret: secrets.access_token_secret
   });
   var params = {
-    follow: q
+    follow: trackwords
   }
 
   //create stream

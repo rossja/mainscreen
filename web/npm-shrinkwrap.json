@@ -216,6 +216,18 @@
           "resolved": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz"
         }
       }
+    },
+    "user-stream": {
+      "version": "0.0.7",
+      "from": "user-stream@*",
+      "resolved": "https://registry.npmjs.org/user-stream/-/user-stream-0.0.7.tgz",
+      "dependencies": {
+        "oauth": {
+          "version": "0.9.8",
+          "from": "oauth@0.9.8",
+          "resolved": "https://registry.npmjs.org/oauth/-/oauth-0.9.8.tgz"
+        }
+      }
     }
   }
 }
